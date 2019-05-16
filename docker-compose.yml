@@ -4,9 +4,15 @@ services:
   koa-ts-docker:
     image: koa-ts-docker
     build: .
+    # Override the Dockerfile CMD so that we automatically code in bind volumes
+    command: pm2-runtime start ecosystem.config.js
+    restart: always
+    # Bind our dev folder to a mount point on the container. Locally updated files (e.g. new TS 
+    # transpiled files) will appear in the container and be picked up by PM2 (could also use nodemon)
     volumes:
       - ./:/usr/src/app
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
+      PORT: 3000
     ports:
       - 3000:3000
