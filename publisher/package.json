@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w --preserveWatchOutput",
+    "start": "tsc -w --preserveWatchOutput",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +20,10 @@
     "url": "https://github.com/tmadhavan/koa-ts-docker/issues"
   },
   "homepage": "https://github.com/tmadhavan/koa-ts-docker#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@types/amqplib": "^0.5.11",
+    "amqplib": "^0.5.3"
+  },
   "devDependencies": {
     "@types/http-status-codes": "^1.2.0",
     "@types/koa": "^2.0.48",

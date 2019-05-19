@@ -2,8 +2,8 @@
 module.exports = {
   apps: [{
     name: 'app',
-    script: 'dist/app.js',
-    instances: "max",
+    script: 'dist/server.js',
+    instances: 1,
     autorestart: true,
     watch: 'dist/**/*.js',
     max_memory_restart: '1G',

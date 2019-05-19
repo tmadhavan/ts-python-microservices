@@ -1,10 +1,9 @@
 version: '2.1'
 
 services:
-  koa-ts-docker:
-    image: koa-ts-docker
+  koa-ts-docker-subscriber-service:
     build: .
-    # Override the Dockerfile CMD so that we automatically code in bind volumes
+    # Override the Dockerfile CMD so that we automatically refresh code in bound volumes
     command: pm2-runtime start ecosystem.config.js
     restart: always
     # Bind our dev folder to a mount point on the container. Locally updated files (e.g. new TS 
@@ -13,6 +12,6 @@ services:
       - ./:/usr/src/app
     environment:
       NODE_ENV: development
-      PORT: 3000
+      PORT: 3001
     ports:
-      - 3000:3000
+      - 3001:3001
