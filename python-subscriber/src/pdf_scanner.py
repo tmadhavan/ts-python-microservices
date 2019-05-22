@@ -6,14 +6,14 @@ from pyzbar.pyzbar import decode, PyZbarError
 from subprocess import CompletedProcess, run
 from PyPDF2 import PdfFileReader
 
-from exceptions.scannerexceptions import ScanError
-
 
 def scan_pdf(path_to_pdf: str, output_file: str):
     end_page = PdfFileReader(path_to_pdf).getNumPages()
     output_folder = os.path.dirname(path_to_pdf)
     print("Output folder is: " + output_folder)
     output_file_path = os.path.join(output_folder, output_file)
+
+    # TODO Get the file from cloud storage
 
     # Open the output file
     with open(output_file_path, 'w') as barcode_output_file:
@@ -26,7 +26,10 @@ def scan_pdf(path_to_pdf: str, output_file: str):
         pdf_convert_to_text_result: CompletedProcess = run(pdf_to_text_conversion_command, cwd=output_folder)
 
         if pdf_convert_to_text_result.returncode != 0:
-            raise ScanError(scanned_file=path_to_pdf)
+            # TODO
+            # Send an error message to the message broker
+            # MessagePublisher.publish(error_message)
+            print ("Error")
 
         pdf_text_output_file_path = os.path.join(output_folder, pdf_text_output_file_name)
 
@@ -39,10 +42,10 @@ def scan_pdf(path_to_pdf: str, output_file: str):
                 barcode_output_file.write("\n\nPotential barcodes from PDF -> image scanning: \n")
         except OSError:
             print(f"Could not parse converted text file {pdf_text_output_file_path}")
-            raise
+            # TODO Send error message to the message broker
         except Exception as ex:
-            print(f"Uknown error occurred scanning {pdf_text_output_file_path}")
-            raise
+            print(f"Unknown error occurred scanning {pdf_text_output_file_path}")
+            # TODO Send error message to the message broker
         finally:
             os.remove(pdf_text_output_file_path)
 
@@ -57,7 +60,8 @@ def scan_pdf(path_to_pdf: str, output_file: str):
             pdf_to_image_result: CompletedProcess = run(pdf_to_image_conversion_command, cwd=output_folder)
 
             if pdf_to_image_result.returncode != 0:
-                raise ScanError(scanned_file=path_to_pdf)
+                # TODO Send error message to the message broker
+                print("ERROR ")
 
             # Get the filename with the correct number format (e.g. '1.png', '001.png', depending on total number of
             # pages. This is how pdftoppm numbers them and isn't configurable.
@@ -78,6 +82,7 @@ def scan_pdf(path_to_pdf: str, output_file: str):
                         barcode_output_file.write('\n')
                         print(f'Scanned file: {converted_image_file_path}')
                     except PyZbarError:
+                        # TODO Send error message to the message broker
                         print("Could not decode image {}".format(converted_image_file_path))
                         continue
 
@@ -85,9 +90,11 @@ def scan_pdf(path_to_pdf: str, output_file: str):
                 os.remove(converted_image_file_path)
 
             except OSError:
+                # TODO Send error message to the message broker
                 print(f"Error opening file for decoding ({converted_image_file_path}).")
                 break
 
+        # TODO Upload file to S3?
         print(f"Completed scanning {path_to_pdf}")
 
 

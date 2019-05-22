@@ -5,16 +5,12 @@ export class MessageSubscriber {
   // TODO change these to environment vars? Or a configmap file?
   readonly mqExchange = 'userid-exchange';
   readonly routingKey = 'user.name.update';
-  readonly qName = 'userq';
+  readonly qName = 'user-name-update-queue';
 
   // when using Docker Compose, 'rabbitmq-server' is the name of the rabbitmq service
   readonly mqUrl = 'amqp://rabbitmq:rabbitmq@rabbitmq-server:5672/';
   mqChannel: amqp.Channel = null;
   mqConn: amqp.Connection = null;
-
-  constructor() {
-
-  }
 
   /**
    * Attempt to connect to the AMQP provider and create a channel
