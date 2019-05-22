@@ -7,7 +7,7 @@ export class MessageSubscriber {
   readonly routingKey = 'user.name.update';
   readonly qName = 'userq';
 
-  // hostname is the name of the docker compose service
+  // when using Docker Compose, 'rabbitmq-server' is the name of the rabbitmq service
   readonly mqUrl = 'amqp://rabbitmq:rabbitmq@rabbitmq-server:5672/';
   mqChannel: amqp.Channel = null;
   mqConn: amqp.Connection = null;
