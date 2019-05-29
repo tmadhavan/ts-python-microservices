@@ -2,58 +2,63 @@ import * as amqp from 'amqplib';
 
 export class MessagePublisher {
 
-  // TODO change these to environment vars? Or a configmap file?
-  readonly mqExchange = 'userid-exchange';
-  readonly routingKey = 'user.name.update';
+  exchangeName: string;
+  messageBrokerUrl: string;
+  channel: amqp.Channel = null;
+  connection: amqp.Connection = null;
 
-  // hostname is the name of the docker compose service
-  readonly mqUrl = 'amqp://rabbitmq:rabbitmq@rabbitmq-server:5672/';
-  mqChannel: amqp.Channel = null;
-  mqConn: amqp.Connection = null;
+  constructor(url: string, exchangeName: string) {
+    this.exchangeName = exchangeName;
+    this.messageBrokerUrl = url;
+  }
 
   private async connect(): Promise<void> {
-
-    if (this.mqConn == null) {
+    if (this.connection == null) {
       console.log('Looks like we aren\'t connected. Connecting...');
-      this.mqConn = await amqp.connect(this.mqUrl);
-      console.log('Connected to AMQP provider.');
+      this.connection = await amqp.connect(this.messageBrokerUrl);
+      console.log('Connected to message broker.');
     }
 
-    if (this.mqChannel == null) {
+    if (this.channel == null) {
       console.log('No channel available. Creating...');
 
-      this.mqChannel = await this.mqConn.createChannel();
-      await this.mqChannel.assertExchange(this.mqExchange, 'direct');
+      this.channel = await this.connection.createChannel();
+      await this.channel.assertExchange(this.exchangeName, 'direct');
       console.log('Channel created.');
 
-      this.mqChannel.on('error', (err) => {
+      this.channel.on('error', (err) => {
         console.error(`Got an error from the MQ channel: ${err}`);
       });
 
-      this.mqChannel.on('close', () => {
-        console.log('MQ channel closed');
-        this.mqConn = null;
+      this.channel.on('close', async () => {
+        console.log('Channel closed; closing connection');
+        await this.connection.close();
+        this.connection = null;
       });
     }
   }
 
-  async publishMessage(content: {}): Promise<void> {
+  async publishMessage(content: {}, routingKey: string, exchangeName = this.exchangeName): Promise<void> {
 
-    if (this.mqConn == null || this.mqChannel == null) {
-      await this.connect();
+    if (this.connection == null || this.channel == null) {
+      try {
+        await this.connect();
+      } catch (err) {
+        console.error(`Failed to connect to message broker. Error was: ${err}`);
+        return;
+      }
     }
 
-    console.log(`Publishing message. Exchange: [${this.mqExchange}], routing key: [${this.routingKey}],
+    console.log(`Publishing message. Exchange: [${exchangeName}], routing key: [${routingKey}],
                   content: [${JSON.stringify(content)}]`);
 
     try {
-      this.mqChannel.publish(this.mqExchange, this.routingKey, Buffer.from(JSON.stringify(content)));
+      this.channel.publish(exchangeName, routingKey, Buffer.from(JSON.stringify(content)));
     } catch (err) {
       console.error(`Error publishing message: ${err}`);
-      this.mqConn.close();
+      await this.connection.close();
+      this.connection = null;
     }
-
-
   }
 
 }

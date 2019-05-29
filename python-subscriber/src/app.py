@@ -1,23 +1,34 @@
-import threading
-from message_subscriber import start_consuming
-from message_publisher import publish_message_test
+from queue import Queue
+
+from messaging.pika.message_publisher import Publisher
+from messaging.pika.publisher_thread import PublisherThread
+from messaging.pika.message_subscriber import Subscriber
+
+
+# RabbitMQ config
+mq_url = "amqp://rabbitmq:rabbitmq@rabbitmq-server:5672/"
+mq_exchange = "pdf-processor-exchange"
+subscriber_routing_key = "pdf.upload.details"
+subscriber_queue_name = "pdf-upload-queue"
+
+publisher_routing_key = "pdf.email.details"
 
 
 def main():
-    # start consumer thread
+
+    #  Create a queue for the subscriber thread and publisher thread to communicate
+    message_queue = Queue()
+
     print("Starting consumer thread...")
-    t1 = threading.Thread(target=start_consuming, daemon=True)
-    t1.start()
+    consumer = Subscriber(mq_url, subscriber_queue_name, mq_exchange, subscriber_routing_key, message_queue)
+    consumer.start()
 
-    # start a dummy publisher thread that fires off a message periodically
     print("Starting publisher thread...")
-    # t2 = threading.Thread(target=publish_message, args=("test",), daemon=True)
-    t2 = threading.Thread(target=publish_message_test, daemon=True)
-    t2.start()
-
-    for thrd in [t1, t2]:
-        thrd.join()
+    publisher = Publisher(mq_url, mq_exchange)
+    publisher_thread = PublisherThread(message_queue, publisher, publisher_routing_key)
+    publisher_thread.start()
 
 
 if __name__ == "__main__":
     main()
+
