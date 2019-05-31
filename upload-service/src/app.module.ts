@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PdfController } from './pdf.controller';
-import {PublisherService} from './messaging/publisher.service';
+import { PdfController } from './controllers/PdfController';
+import {PublisherService} from './messaging/PublisherService';
 
 @Module({
   imports: [],

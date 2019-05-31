@@ -2,53 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afec3ce8-ee60-4df5-8777-8a1542eddd29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/node-amqp-publisher/src/controllers/pdf.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-amqp-publisher/src/controllers/upload.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-amqp-publisher/src/messaging/message_publisher.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/messaging/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/messaging/pika/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/messaging/pika/message_publisher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/messaging/pika/message_subscriber.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/messaging/pika/publisher_thread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/pdf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/pdf/pdf_scanner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/storage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf-processing-service/src/storage/s3client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/koa-ts-docker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/koa-ts-docker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.debug.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/ecosystem.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/ecosystem.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/controllers/user_id.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/messaging/message_publisher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-publisher/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/ecosystem.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/ecosystem.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/src/messaging/message_subscriber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/src/messaging/message_subscriber.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-amqp-subscriber/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload-service/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/upload-service/src/app.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/upload-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload-service/src/messaging/publisher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/upload-service/src/messaging/PublisherService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload-service/src/pdf.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/upload-service/src/controllers/PdfController.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,6 +20,69 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload-service/src/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload-service/src/controllers/PdfController.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pdf-processing-service/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="11" selection-start-column="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/storage/s3client.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/pdf/pdf_scanner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload-service/src/messaging/PublisherService.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -79,13 +100,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/upload-service" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/upload/Dockerfile" />
-        <option value="$PROJECT_DIR$/upload/docker-compose.yml" />
         <option value="$PROJECT_DIR$/subscriber/docker-compose.yml" />
         <option value="$PROJECT_DIR$/upload/src/app.ts" />
         <option value="$PROJECT_DIR$/upload/src/user_id.controller.ts" />
@@ -135,6 +154,8 @@
         <option value="$PROJECT_DIR$/docker-compose.dev.yml" />
         <option value="$PROJECT_DIR$/pdf-processing-service/src/messaging/pika/message_subscriber.py" />
         <option value="$PROJECT_DIR$/pdf-processing-service/src/app.py" />
+        <option value="$PROJECT_DIR$/upload-service/src/controllers/pdf.controller.ts" />
+        <option value="$PROJECT_DIR$/pdf-processing-service/requirements.txt" />
       </list>
     </option>
   </component>
@@ -154,7 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,10 +182,83 @@
               <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="messaging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="messaging" type="462c0819:PsiDirectoryNode" />
+              <item name="pika" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="pdf-processing-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="upload-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="messaging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koa-ts-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koa-ts-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -186,19 +279,19 @@
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/upload-service/src/controllers" />
+      <recent name="$PROJECT_DIR$/upload-service/src/messaging" />
+      <recent name="$PROJECT_DIR$/python-subscriber/src/messaging/pika" />
+      <recent name="$PROJECT_DIR$/python-subscriber/src/pdf" />
+      <recent name="$PROJECT_DIR$/python-subscriber/src/messaging" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/upload-service/src" />
       <recent name="$PROJECT_DIR$/upload-service" />
       <recent name="$PROJECT_DIR$/python-subscriber" />
       <recent name="$PROJECT_DIR$/subscriber" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/upload-service/src/messaging" />
-      <recent name="$PROJECT_DIR$/python-subscriber/src/messaging/pika" />
-      <recent name="$PROJECT_DIR$/python-subscriber/src/pdf" />
-      <recent name="$PROJECT_DIR$/python-subscriber/src/messaging" />
-      <recent name="$PROJECT_DIR$/python-subscriber/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -318,6 +411,7 @@
       <workItem from="1558372022276" duration="863000" />
       <workItem from="1558419311448" duration="35476000" />
       <workItem from="1559314894676" duration="11140000" />
+      <workItem from="1559330220741" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="First attempt at a Docker deployment that consists of three containers:&#10;&#10; - node/Koa server exposing a single rest endpoint, which takes some &#10;   parameters and publishes a simple message to RabbitMQ &#10; - node server that subscribes to a RabbitMQ and console logs messages&#10;   that it receives (published by the other node container) &#10; - a RabbitMQ container for message brokering">
       <created>1558282642300</created>
@@ -347,16 +441,24 @@
       <option name="project" value="LOCAL" />
       <updated>1559163763161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch 'master' into add-nestjs-node-app&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1559330248936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559330248936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76093000" />
+    <option name="totallyTimeSpent" value="76748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49957877" visible="true" weight="0.24969475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49957877" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5004212" side_tool="true" weight="0.15361978" />
@@ -369,7 +471,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" visible="true" weight="0.3379679" />
+      <window_info anchor="bottom" id="Docker" order="7" weight="0.3379679" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.22780749" />
@@ -396,7 +498,8 @@
     <MESSAGE value="Begin adding Python subscriber service. There's much better Python &#10;library support for doing things like manipulating PDFs (and I already&#10;have some of the code from the original implementation of the barcode &#10;scanning app)." />
     <MESSAGE value="WIP - first attempt at a Python rabbitmq publisher/consumer, each in &#10;their own threads. &#10;&#10;Python files aren't in modules due to some import issues but basic &#10;functionality for Python -&gt; rabbitmq -&gt; Python message passing is &#10;working." />
     <MESSAGE value="WIP - Created threaded python publisher/consumer classes, which can receive a&#10;message from rabbitmq (from the node service), do some fake processing,&#10;and then publish another message to rabbitmq (which will likely be &#10;handled by an email service). &#10;&#10;Still doesn't *DO* anything, but there is now a basic node rest &#10;endpoint, which publishes a message, which then gets picked up by a &#10;Python service, which finally publishes another message." />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP - Created threaded python publisher/consumer classes, which can receive a&#10;message from rabbitmq (from the node service), do some fake processing,&#10;and then publish another message to rabbitmq (which will likely be &#10;handled by an email service). &#10;&#10;Still doesn't *DO* anything, but there is now a basic node rest &#10;endpoint, which publishes a message, which then gets picked up by a &#10;Python service, which finally publishes another message." />
+    <MESSAGE value="Merge branch 'master' into add-nestjs-node-app&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' into add-nestjs-node-app&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node-amqp-subscriber/package.json">
@@ -463,16 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/pdf/pdf_scanner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pdf-processing-service/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -483,17 +576,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdf-processing-service/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python-subscriber/src/storage/storage_client_factory.py" />
-    <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/storage/s3client.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node-amqp-subscriber/src/messaging/message_subscriber.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -603,16 +686,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload-service/src/app.service.ts" />
-    <entry file="file://$PROJECT_DIR$/upload-service/src/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upload-service/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -620,16 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upload-service/src/messaging/publisher.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,20 +757,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upload-service/src/pdf.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upload-service/src/messaging/MessagePublisher.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-318">
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload-service/src/messaging/PublisherService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload-service/src/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload-service/src/controllers/PdfController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdf-processing-service/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/storage/s3client.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdf-processing-service/src/pdf/pdf_scanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

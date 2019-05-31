@@ -1,6 +1,6 @@
 import {Body, Controller, Get, Param, Post} from '@nestjs/common';
-import {PublisherService} from './messaging/publisher.service';
-import {PdfDetailsDto} from './model/PdfDetailsDto';
+import {PublisherService} from '../messaging/PublisherService';
+import {PdfDetailsDto} from '../model/PdfDetailsDto';
 
 @Controller('/pdf')
 export class PdfController {
