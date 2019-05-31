@@ -1,7 +1,7 @@
 import * as Koa from 'koa';
 import * as bodyParser from 'koa-bodyparser';
 import * as HttpStatus from 'http-status-codes';
-import router from './controllers/user_id.controller';
+import router from './controllers/pdf.controller';
 
 const app = new Koa();
 
