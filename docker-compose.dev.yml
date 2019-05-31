@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-#  node-subscriber-service:
-#    image: koa-ts-docker-subscriber
-#    build: './node-subscriber'
+
+# Node/TS AMQP subscriber service example using amqplib
+#  node-amqp-subscriber-service:
+#    image: node-amqp-subscriber
+#    build: './node-amqp-subscriber'
 #    depends_on:
 #      - rabbitmq-server
 #    # Override the Dockerfile CMD so that we automatically refresh code in bound volumes
@@ -12,41 +14,60 @@ services:
 #    # Bind our dev folder to a mount point on the container. Locally updated files (e.g. new TS
 #    # transpiled files) will appear in the container and be picked up by PM2 (could also use nodemon)
 #    volumes:
-#      - ./node-subscriber:/usr/src/app
+#      - ./node-amqp-subscriber:/usr/src/app
 #    environment:
 #      NODE_ENV: development
 #      PORT: 3000
 #    ports:
 #      - 3000:3000
 
+#  Node/Koa AMQP node-amqp-publisher service example using amqplib
+#  node-amqp-publisher-service:
+#    image: node-amqp-publisher
+#    build: './node-amqp-publisher'
+#    depends_on:
+#      - rabbitmq-server
+#    command: pm2-runtime start ecosystem.config.js
+#    restart: always
+#    volumes:
+#      - ./node-amqp-publisher:/usr/src/app
+#    environment:
+#      NODE_ENV: development
+#      PORT: 3001
+#    ports:
+#      - 3001:3001
 
-  python-subscriber-service:
-    build: ./python-subscriber
+
+# Python PDF processing service (AMQP subscriber and node-amqp-publisher using Pika)
+  pdf-processing-service:
+    image: pdf-processing-service-image
+    build: './pdf-processing-service'
     depends_on:
       - rabbitmq-server
     restart: always
-#    volumes:
-#      - ./python-subscriber:/usr/src/app
     environment:
       PORT: 3002
       PYTHONUNBUFFERED: 0
     ports:
       - 3002:3002
 
-  publisher-service:
-    image: koa-ts-docker-publisher
-    build: './publisher'
+
+# Node/Nestjs PDF upload and AMQP publisher service
+  pdf-upload-service:
+    image: upload-service-image
+    build: './upload-service'
     depends_on:
       - rabbitmq-server
-    command: pm2-runtime start ecosystem.config.js
+#    command: pm2-runtime start ecosystem.config.js
     restart: always
     volumes:
-      - ./publisher:/usr/src/app
+      - ./upload-service:/usr/src/app
     environment:
       NODE_ENV: development
       PORT: 3001
     ports:
       - 3001:3001
+
 
   rabbitmq-server:
     image: "rabbitmq:3-management"

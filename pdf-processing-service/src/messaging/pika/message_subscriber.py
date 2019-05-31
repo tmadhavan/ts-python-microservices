@@ -33,7 +33,7 @@ class Subscriber(threading.Thread):
     def on_message(self, chan, method_frame, _header_frame, body):
         print(f"Received message data: {body}")
 
-        # Get the file id, do our processing, then send off a new message
+        # Get the file id, do our 'processing', then send off a new message
         time.sleep(3)
 
         # Pretend we have the file, put it on S3 or whatever

@@ -4,13 +4,11 @@ from messaging.pika.message_publisher import Publisher
 from messaging.pika.publisher_thread import PublisherThread
 from messaging.pika.message_subscriber import Subscriber
 
-
 # RabbitMQ config
 mq_url = "amqp://rabbitmq:rabbitmq@rabbitmq-server:5672/"
 mq_exchange = "pdf-processor-exchange"
 subscriber_routing_key = "pdf.upload.details"
 subscriber_queue_name = "pdf-upload-queue"
-
 publisher_routing_key = "pdf.email.details"
 
 
