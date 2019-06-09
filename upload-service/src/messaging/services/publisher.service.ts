@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {MessagePublisher} from './MessagePublisher';
+import {MessagePublisher} from '../../messaging/MessagePublisher';
 
 @Injectable()
 export class PublisherService {
