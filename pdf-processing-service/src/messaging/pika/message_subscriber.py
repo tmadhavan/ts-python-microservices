@@ -6,10 +6,11 @@ import pika
 import functools
 import time
 
+
 class Subscriber(threading.Thread):
     """
-    Listens for messages on a rabbitMQ exchange, processes them, and adds a new message to a Python queue. The queue
-    is used to communicate with another publisher thread, which in turn publishes messages to rabbitMQ
+    Listens for messages on a rabbitMQ queue, processes them, and adds a new message to a (local) queue. The queue
+    is used to communicate with another publisher thread, which in turn publishes messages to rabbitMQ.
     """
 
     def __init__(self, url: str, broker_queue_name: str, exchange_name: str, routing_key: str,

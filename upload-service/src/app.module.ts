@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { PdfController } from './controllers/PdfController';
-import {PublisherService} from './messaging/PublisherService';
+import {UploadsModule} from './uploads/uploads.module';
+import {MessagingModule} from './messaging/messaging.module';
 
 @Module({
-  imports: [],
-  controllers: [PdfController],
-  providers: [PublisherService],
+  imports: [UploadsModule, MessagingModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

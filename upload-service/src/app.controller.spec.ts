@@ -2,19 +2,19 @@
 // Leaving this here as an example spec file for later
 
 // import { Test, TestingModule } from '@nestjs/testing';
-// import { PdfController } from './controllers/PdfController';
+// import { UploadController } from './controllers/UploadController';
 // import { AppService } from './app.service';
 //
-// describe('PdfController', () => {
-//   let appController: PdfController;
+// describe('UploadController', () => {
+//   let appController: UploadController;
 //
 //   beforeEach(async () => {
 //     const app: TestingModule = await Test.createTestingModule({
-//       controllers: [PdfController],
+//       controllers: [UploadController],
 //       providers: [AppService],
 //     }).compile();
 //
-//     appController = app.get<PdfController>(PdfController);
+//     appController = app.get<UploadController>(UploadController);
 //   });
 //
 //   describe('root', () => {

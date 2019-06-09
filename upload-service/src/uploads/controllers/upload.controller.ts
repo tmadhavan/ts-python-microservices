@@ -1,26 +1,21 @@
-import {Body, Controller, Get, Param, Post} from '@nestjs/common';
-import {PublisherService} from '../messaging/PublisherService';
-import {PdfDetailsDto} from '../model/PdfDetailsDto';
+import {Body, Controller, Post, UploadedFile, UseInterceptors} from '@nestjs/common';
+import {PublisherService} from '../../messaging/services/publisher.service';
+import {FileDetailsDto} from '../dto/filedetails.dto';
+import {FileInterceptor} from '@nestjs/platform-express';
 
 @Controller('/pdf')
-export class PdfController {
+export class UploadController {
 
   constructor(private readonly publisherService: PublisherService) { }
 
-  @Post()
-  publishMessage(@Body() fileDetails: PdfDetailsDto) {
-    console.log(`Got some file details: ${JSON.stringify(fileDetails)}`);
-    this.publisherService.publishMessage(fileDetails);
+  @Post('upload')
+  @UseInterceptors(FileInterceptor('file'))
+  uploadPdfFile(@UploadedFile('file') uploadedFile) {
+    // do  any necessary pre-processing
+
+    // copy to S3
+
+    // publish message with success/failure status of S3 copy
   }
 
-  @Post(':username')
-  publishMessageWithUsername(@Body() fileDetails: PdfDetailsDto, @Param() params) {
-    console.log(`Got some file details: ${JSON.stringify(fileDetails)}, ${params.username}`);
-
-    this.publisherService.publishMessage(fileDetails);
-
-    // this will take a PDF
-    // transfer to S3
-    // publish a rabbitmq message with S3 file ID
-  }
 }

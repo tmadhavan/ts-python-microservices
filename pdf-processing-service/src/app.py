@@ -28,5 +28,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # For now, just exit if there are any connection issues
+    # noinspection PyBroadException
+    try:
+        main()
+    except:
+        print('Error starting PDF processing service')
 

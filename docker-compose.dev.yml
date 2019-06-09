@@ -2,42 +2,6 @@ version: '3'
 
 services:
 
-# Node/TS AMQP subscriber service example using amqplib
-#  node-amqp-subscriber-service:
-#    image: node-amqp-subscriber
-#    build: './node-amqp-subscriber'
-#    depends_on:
-#      - rabbitmq-server
-#    # Override the Dockerfile CMD so that we automatically refresh code in bound volumes
-#    command: pm2-runtime start ecosystem.config.js
-#    restart: always
-#    # Bind our dev folder to a mount point on the container. Locally updated files (e.g. new TS
-#    # transpiled files) will appear in the container and be picked up by PM2 (could also use nodemon)
-#    volumes:
-#      - ./node-amqp-subscriber:/usr/src/app
-#    environment:
-#      NODE_ENV: development
-#      PORT: 3000
-#    ports:
-#      - 3000:3000
-
-#  Node/Koa AMQP node-amqp-publisher service example using amqplib
-#  node-amqp-publisher-service:
-#    image: node-amqp-publisher
-#    build: './node-amqp-publisher'
-#    depends_on:
-#      - rabbitmq-server
-#    command: pm2-runtime start ecosystem.config.js
-#    restart: always
-#    volumes:
-#      - ./node-amqp-publisher:/usr/src/app
-#    environment:
-#      NODE_ENV: development
-#      PORT: 3001
-#    ports:
-#      - 3001:3001
-
-
 # Python PDF processing service (AMQP subscriber and node-amqp-publisher using Pika)
   pdf-processing-service:
     image: pdf-processing-service-image
@@ -58,7 +22,6 @@ services:
     build: './upload-service'
     depends_on:
       - rabbitmq-server
-#    command: pm2-runtime start ecosystem.config.js
     restart: always
     volumes:
       - ./upload-service:/usr/src/app
@@ -67,6 +30,22 @@ services:
       PORT: 3001
     ports:
       - 3001:3001
+
+
+# THIS WON'T WORK unless the pdf-processing-service is publicly accessible
+  ui-service:
+    image: ui-service-image
+    build: './ui-service'
+    depends_on:
+      - rabbitmq-server
+    restart: always
+#    volumes:
+#      - ./ui-service/dist:/usr/share/nginx/html
+    environment:
+      PORT: 80
+      UPLOAD_HOST: "public address of the upload service"
+    ports:
+      - 80:80
 
 
   rabbitmq-server:
