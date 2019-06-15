@@ -1,9 +1,17 @@
-import {Module} from '@nestjs/common';
-import {CloudStorageService} from './services/cloudstorage.service';
+import { Module, Provider, Global } from '@nestjs/common';
+import { StorageFactory } from './storage.factory';
+import { STORAGE_SERVICE } from './services/storage.config';
 
+const storageProvider: Provider = {
+  provide: STORAGE_SERVICE,
+  useFactory: () => StorageFactory.getStorageProvider(),
+  inject: [StorageFactory],
+};
+
+@Global()
 @Module({
-  providers: [CloudStorageService],
-  exports: [CloudStorageService]
+  controllers: [],
+  providers: [storageProvider, StorageFactory],
+  exports: [storageProvider],
 })
-
-export class MessagingModule {}
+export default class StorageModule {}

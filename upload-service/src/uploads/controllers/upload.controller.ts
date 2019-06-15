@@ -1,21 +1,29 @@
-import {Body, Controller, Post, UploadedFile, UseInterceptors} from '@nestjs/common';
-import {PublisherService} from '../../messaging/services/publisher.service';
-import {FileDetailsDto} from '../dto/filedetails.dto';
-import {FileInterceptor} from '@nestjs/platform-express';
+import {
+  Body,
+  Controller,
+  Post,
+  UploadedFile,
+  UseInterceptors,
+  Req,
+  Res,
+  Inject,
+} from '@nestjs/common';
+import { PublisherService } from '../../messaging/services/publisher.service';
+import { STORAGE_SERVICE } from '../../storage/services/storage.config';
+import { StorageProvider } from '../../storage/services/storage.interface';
 
-@Controller('/pdf')
+@Controller('/upload')
 export class UploadController {
+  constructor(
+    private readonly publisherService: PublisherService,
+    @Inject(STORAGE_SERVICE) private readonly storageService: StorageProvider,
+  ) {}
 
-  constructor(private readonly publisherService: PublisherService) { }
+  @Post()
+  uploadFile(@UploadedFile() file) {
+    // upload file to cloud storage provider
+    this.storageService.uploadFile(file);
 
-  @Post('upload')
-  @UseInterceptors(FileInterceptor('file'))
-  uploadPdfFile(@UploadedFile('file') uploadedFile) {
-    // do  any necessary pre-processing
-
-    // copy to S3
-
-    // publish message with success/failure status of S3 copy
+    // publish FileDetailsDto message to rabbitmq
   }
-
 }

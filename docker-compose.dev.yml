@@ -43,7 +43,8 @@ services:
 #      - ./ui-service/dist:/usr/share/nginx/html
     environment:
       PORT: 80
-      UPLOAD_HOST: "public address of the upload service"
+      # This will be the public address of the upload service in a production environment
+      UPLOAD_HOST: "http://localhost:3001/upload"
     ports:
       - 80:80
 

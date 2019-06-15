@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test file upload</title>
+</head>
+
+<body>
+
+<h1>Test Upload</h1>
+
+<p>Please select a file and submit the form to upload.</p>
+
+<form method="post" enctype="multipart/form-data" action="http://localhost:3001/upload">
+  <label for="file">Upload a file</label>
+  <!-- The 'name' value of the file input is what needs to be passed to NestJS' FileInterceptor annotation - i.e. @FileIntercepto('upload') -->
+  <input type="file" name="upload">
+  <input type="submit" class="button">
+</form>
+
+</body>
+</html>
