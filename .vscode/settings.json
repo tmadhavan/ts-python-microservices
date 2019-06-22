@@ -1,3 +1,4 @@
 {
-    "terminal.integrated.fontFamily": "MesloLGMDZ Nerd Font Mono"
+    "terminal.integrated.fontFamily": "MesloLGMDZ Nerd Font Mono",
+    "python.pythonPath": "/Users/thomas/.virtualenvs/koa-ts-docker/bin/python"
 }

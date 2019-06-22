@@ -1,3 +1,11 @@
+import { Readable } from "stream";
+
 export interface StorageProvider {
-  uploadFile(file: any): void;
+  /**
+   * Takes a readable stream and transfers its contents to the 
+   * storage provider
+   * 
+   * @param fileStream the file stream to be uploaded
+   */
+  uploadFile(fileStream: Readable): Promise<string>;
 }

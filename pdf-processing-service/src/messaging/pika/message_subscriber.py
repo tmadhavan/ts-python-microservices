@@ -14,7 +14,7 @@ class Subscriber(threading.Thread):
     """
 
     def __init__(self, url: str, broker_queue_name: str, exchange_name: str, routing_key: str,
-                 publisher_queue: queue.Queue = None):
+                 file_processing_queue: queue.Queue = None):
         """
 
         :param url: The AMQP url to connect to (rabbitmq)
@@ -33,7 +33,16 @@ class Subscriber(threading.Thread):
 
     def on_message(self, chan, method_frame, _header_frame, body):
         print(f"Received message data: {body}")
+        
+        json_msg_content = json.loads(body)
 
+        # Get the file ID from the message 
+        file_id = json_msg_content['fileId']
+
+        try:
+            # Download the file 
+
+            # Process it 
         # Get the file id, do our 'processing', then send off a new message
         time.sleep(3)
 

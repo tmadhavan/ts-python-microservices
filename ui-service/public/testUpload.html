@@ -16,8 +16,11 @@
 
 <form method="post" enctype="multipart/form-data" action="http://localhost:3001/upload">
   <label for="file">Upload a file</label>
-  <!-- The 'name' value of the file input is what needs to be passed to NestJS' FileInterceptor annotation - i.e. @FileIntercepto('upload') -->
+  <!-- The 'name' value of the file input is what needs to be passed to NestJS' FileInterceptor annotation 
+    if it's being used - i.e. @FileInterceptor('upload') -->
   <input type="file" name="upload">
+  <label for="email">Enter email</label>
+  <input type="email" name="email">
   <input type="submit" class="button">
 </form>
 

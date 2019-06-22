@@ -7,7 +7,7 @@ export class AzureStorageProvider implements StorageProvider {
     // set up azure storage config
   }
 
-  uploadFile() {
-    console.log('uploading some stuff to azure...');
+  uploadFile(): Promise<string> {
+    return new Promise(resolve => resolve());
   }
 }

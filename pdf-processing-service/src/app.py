@@ -14,17 +14,23 @@ publisher_routing_key = "pdf.email.details"
 
 def main():
 
-    #  Create a queue for the subscriber thread and publisher thread to communicate
-    message_queue = Queue()
+    # Queue for the subscriber thread and processor thread to communicate
+    processing_queue = Queue()
+
+    # Queue for the processor thread and publisher thread to communicate
+    publishing_queue = Queue()
 
     print("Starting consumer thread...")
-    consumer = Subscriber(mq_url, subscriber_queue_name, mq_exchange, subscriber_routing_key, message_queue)
+    consumer = Subscriber(mq_url, subscriber_queue_name, mq_exchange, subscriber_routing_key, processing_queue)
     consumer.start()
 
     print("Starting publisher thread...")
     publisher = Publisher(mq_url, mq_exchange)
-    publisher_thread = PublisherThread(message_queue, publisher, publisher_routing_key)
+    publisher_thread = PublisherThread(publishing_queue, publisher, publisher_routing_key)
     publisher_thread.start()
+
+    print("Starting processing thread...")
+    processor = Processor(processing_queue, publishing_queue)
 
 
 if __name__ == "__main__":

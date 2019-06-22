@@ -1,0 +1,65 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CompletedProcess	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from subprocess import CompletedProcess, run$/;"	kind:namespace	line:6
+Image	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from PIL import Image$/;"	kind:namespace	line:4
+PdfFileReader	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from PyPDF2 import PdfFileReader$/;"	kind:namespace	line:7
+Publisher	../pdf-processing-service/src/app.py	/^from messaging.pika.message_publisher import Publisher$/;"	kind:namespace	line:3
+Publisher	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^class Publisher:$/;"	kind:class	line:3
+Publisher	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^from messaging.pika.message_publisher import Publisher$/;"	kind:namespace	line:3
+PublisherThread	../pdf-processing-service/src/app.py	/^from messaging.pika.publisher_thread import PublisherThread$/;"	kind:namespace	line:4
+PublisherThread	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^class PublisherThread(threading.Thread):$/;"	kind:class	line:6
+PyZbarError	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from pyzbar.pyzbar import decode, PyZbarError$/;"	kind:namespace	line:5
+Queue	../pdf-processing-service/src/app.py	/^from queue import Queue$/;"	kind:namespace	line:1
+Queue	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^from queue import Queue$/;"	kind:namespace	line:2
+Subscriber	../pdf-processing-service/src/app.py	/^from messaging.pika.message_subscriber import Subscriber$/;"	kind:namespace	line:5
+Subscriber	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^class Subscriber(threading.Thread):$/;"	kind:class	line:10
+__init__	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^    def __init__(self, url: str, exchange_name: str):$/;"	kind:member	line:5
+__init__	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^    def __init__(self, url: str, broker_queue_name: str, exchange_name: str, routing_key: str,$/;"	kind:member	line:16
+__init__	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^    def __init__(self, msg_queue: Queue, publisher: Publisher, routing_key: str):$/;"	kind:member	line:8
+__init__.py	../pdf-processing-service/src/__init__.py	1;"	kind:file	line:1
+__init__.py	../pdf-processing-service/src/messaging/__init__.py	1;"	kind:file	line:1
+__init__.py	../pdf-processing-service/src/messaging/pika/__init__.py	1;"	kind:file	line:1
+__init__.py	../pdf-processing-service/src/pdf/__init__.py	1;"	kind:file	line:1
+__init__.py	../pdf-processing-service/src/storage/__init__.py	1;"	kind:file	line:1
+app.py	../pdf-processing-service/src/app.py	1;"	kind:file	line:1
+barcode_regexes	../pdf-processing-service/src/pdf/pdf_scanner.py	/^barcode_regexes = {$/;"	kind:variable	line:117
+close_connection	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^    def close_connection(self):$/;"	kind:member	line:34
+decode	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from pyzbar.pyzbar import decode, PyZbarError$/;"	kind:namespace	line:5
+functools	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import functools$/;"	kind:namespace	line:6
+get_number_format	../pdf-processing-service/src/pdf/pdf_scanner.py	/^def get_number_format(number_of_pages) -> str:$/;"	kind:function	line:103
+json	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import json$/;"	kind:namespace	line:3
+listen_for_publish_messages	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^    def listen_for_publish_messages(self):$/;"	kind:member	line:17
+main	../pdf-processing-service/src/app.py	/^def main():$/;"	kind:function	line:15
+math	../pdf-processing-service/src/pdf/pdf_scanner.py	/^import math$/;"	kind:namespace	line:1
+message_publisher.py	../pdf-processing-service/src/messaging/pika/message_publisher.py	1;"	kind:file	line:1
+message_subscriber.py	../pdf-processing-service/src/messaging/pika/message_subscriber.py	1;"	kind:file	line:1
+mq_exchange	../pdf-processing-service/src/app.py	/^mq_exchange = "pdf-processor-exchange"$/;"	kind:variable	line:9
+mq_url	../pdf-processing-service/src/app.py	/^mq_url = "amqp:\/\/rabbitmq:rabbitmq@rabbitmq-server:5672\/"$/;"	kind:variable	line:8
+on_message	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^    def on_message(self, chan, method_frame, _header_frame, body):$/;"	kind:member	line:34
+open_connection	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^    def open_connection(self) -> None:$/;"	kind:member	line:13
+os	../pdf-processing-service/src/pdf/pdf_scanner.py	/^import os$/;"	kind:namespace	line:2
+os	../pdf-processing-service/src/storage/s3client.py	/^import os$/;"	kind:namespace	line:1
+parse_potential_barcodes	../pdf-processing-service/src/pdf/pdf_scanner.py	/^def parse_potential_barcodes(text_file: str) -> list:$/;"	kind:function	line:127
+pdf_scanner.py	../pdf-processing-service/src/pdf/pdf_scanner.py	1;"	kind:file	line:1
+pika	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^import pika$/;"	kind:namespace	line:1
+pika	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import pika$/;"	kind:namespace	line:5
+publish_message	../pdf-processing-service/src/messaging/pika/message_publisher.py	/^    def publish_message(self, content, routing_key):$/;"	kind:member	line:28
+publisher_routing_key	../pdf-processing-service/src/app.py	/^publisher_routing_key = "pdf.email.details"$/;"	kind:variable	line:12
+publisher_thread.py	../pdf-processing-service/src/messaging/pika/publisher_thread.py	1;"	kind:file	line:1
+queue	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import queue$/;"	kind:namespace	line:1
+re	../pdf-processing-service/src/pdf/pdf_scanner.py	/^import re$/;"	kind:namespace	line:3
+run	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^    def run(self) -> None:$/;"	kind:member	line:54
+run	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^    def run(self) -> None:$/;"	kind:member	line:14
+run	../pdf-processing-service/src/pdf/pdf_scanner.py	/^from subprocess import CompletedProcess, run$/;"	kind:namespace	line:6
+s3client.py	../pdf-processing-service/src/storage/s3client.py	1;"	kind:file	line:1
+scan_pdf	../pdf-processing-service/src/pdf/pdf_scanner.py	/^def scan_pdf(file_id: str, output_file: str):$/;"	kind:function	line:12
+start_consuming	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^    def start_consuming(self):$/;"	kind:member	line:57
+subscriber_queue_name	../pdf-processing-service/src/app.py	/^subscriber_queue_name = "pdf-upload-queue"$/;"	kind:variable	line:11
+subscriber_routing_key	../pdf-processing-service/src/app.py	/^subscriber_routing_key = "pdf.upload.details"$/;"	kind:variable	line:10
+threading	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import threading$/;"	kind:namespace	line:2
+threading	../pdf-processing-service/src/messaging/pika/publisher_thread.py	/^import threading$/;"	kind:namespace	line:1
+time	../pdf-processing-service/src/messaging/pika/message_subscriber.py	/^import time$/;"	kind:namespace	line:7

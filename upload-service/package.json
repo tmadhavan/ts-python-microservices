@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "STORAGE_PROVIDER=AWS concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
+    "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
     "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
@@ -31,7 +31,8 @@
     "multer-s3": "^2.9.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.3.3"
+    "rxjs": "^6.3.3",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.0.0",
@@ -42,6 +43,7 @@
     "@types/multer-s3": "^2.7.6",
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
+    "@types/uuid": "^3.4.4",
     "concurrently": "^4.1.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9",

@@ -6,8 +6,10 @@ from pyzbar.pyzbar import decode, PyZbarError
 from subprocess import CompletedProcess, run
 from PyPDF2 import PdfFileReader
 
-
+# TODO Would be nice if this would work with a stream, but not sure that's really going to 
+#      be doable given the dependencies on Linux command line tools
 def scan_pdf(path_to_pdf: str, output_file: str):
+
     end_page = PdfFileReader(path_to_pdf).getNumPages()
     output_folder = os.path.dirname(path_to_pdf)
     print("Output folder is: " + output_folder)
@@ -26,10 +28,7 @@ def scan_pdf(path_to_pdf: str, output_file: str):
         pdf_convert_to_text_result: CompletedProcess = run(pdf_to_text_conversion_command, cwd=output_folder)
 
         if pdf_convert_to_text_result.returncode != 0:
-            # TODO
-            # Send an error message to the message broker
-            # MessagePublisher.publish(error_message)
-            print ("Error")
+            raise OSError('Error converting PDF to text')
 
         pdf_text_output_file_path = os.path.join(output_folder, pdf_text_output_file_name)
 
@@ -40,12 +39,9 @@ def scan_pdf(path_to_pdf: str, output_file: str):
                 barcode_output_file.write("Potential barcodes from PDF -> text conversion: \n")
                 barcode_output_file.writelines(potential_barcodes)
                 barcode_output_file.write("\n\nPotential barcodes from PDF -> image scanning: \n")
-        except OSError:
+        except OSError as osx:
             print(f"Could not parse converted text file {pdf_text_output_file_path}")
-            # TODO Send error message to the message broker
-        except Exception as ex:
-            print(f"Unknown error occurred scanning {pdf_text_output_file_path}")
-            # TODO Send error message to the message broker
+            raise osx
         finally:
             os.remove(pdf_text_output_file_path)
 
@@ -82,7 +78,6 @@ def scan_pdf(path_to_pdf: str, output_file: str):
                         barcode_output_file.write('\n')
                         print(f'Scanned file: {converted_image_file_path}')
                     except PyZbarError:
-                        # TODO Send error message to the message broker
                         print("Could not decode image {}".format(converted_image_file_path))
                         continue
 

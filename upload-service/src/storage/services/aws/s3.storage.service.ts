@@ -1,44 +1,55 @@
 import { Injectable, Req, Res } from '@nestjs/common';
 import * as aws from 'aws-sdk';
 import { StorageProvider } from '../storage.interface';
+import { Readable } from 'stream';
+import * as fs from 'fs';
+import { v4 as uuid } from 'uuid';
 
+/**
+ * This class provides cloud storage functionality using AWS S3.
+ * It requires environment variables to have been set, defining
+ * configuration for S3 (bucket name, access key, secret key)
+ */
 @Injectable()
 export class S3StorageProvider implements StorageProvider {
+  
+  // TODO Inject this config, or at least create it somewhere else
+  //      Could be a ConfigService maybe
 
-  readonly s3client: aws.S3;
+  private readonly client: aws.S3;
 
-  // TODO inject this config, or at least create it somewhere else 
-  readonly s3Bucket = process.env.AWS_BUCKET_NAME;
-
-  constructor() {
+  constructor(private readonly bucketName = process.env.AWS_BUCKET_NAME) {
     // set up S3 config
-    
-    // get this from secret config/env vars 
+
+    // get this from secret config/env vars
     aws.config.update({
       accessKeyId: process.env.AWS_ACCESS_KEY,
       secretAccessKey: process.env.AWS_SECRET_KEY,
     });
-    
-    this.s3client = new aws.S3();
-    
-    console.log(`Using bucket ${this.s3Bucket}`);
+
+    this.client = new aws.S3();
+    console.log(`Using bucket ${this.bucketName}`);
   }
 
-  uploadFile(file: any) {
-    console.log('uploading some stuff to S3...');
-    this.listBucketObjects();
-  }
+  uploadFile(file: Readable): Promise<string> {
 
-  private listBucketObjects() {
-    console.log('Listing bucket objects...'); 
-    this.s3client.listObjects({
-      Bucket: this.s3Bucket
-    }, (err, data) => {
-      if (err) {
-        console.error('error');
-      } else {
-        console.log(data)
-      }
-    })
+    const fileKey = `${uuid()}.pdf`;
+
+    // Stream the file data to S3
+    const uploadConfig = {
+      Key: fileKey,
+      Bucket: this.bucketName,
+      Body: file,
+    };
+
+    return new Promise( (resolve, reject) => {
+      this.client.upload(uploadConfig, (err, data) => {
+        if (err) {
+          reject(`Error uploading to S3: ${err}`);
+        } else {
+          resolve(fileKey);
+        }
+      });
+    });
   }
 }
